@@ -1,0 +1,121 @@
+// BOUTONS 
+@mixin btn {
+    height: 50px;
+    width: 220px;
+    background: linear-gradient(180deg, rgba(147, 86, 220, 1) 29%, rgba(255, 121, 218, 1) 100%);
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, .25);
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1);
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, .80);
+      
+    }
+}
+
+// CADRE FONCTIONEMENT
+
+@mixin bg-function {
+    background-color: $grey;
+    margin: 20px;
+    padding-left: 35px;
+    width: 330px;
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, .25);
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    i{
+        transition: 0.2s;
+        
+    }
+    &:hover{
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, .40);
+    background:  rgba(146, 86, 220, 0.156) 29%,;
+    
+    i{
+        color: $color-primary;
+    }
+
+    
+        
+    }
+}
+
+// titre section index
+
+@mixin title-section {
+    font-size: 1.3rem;
+    margin-left: 20px;
+     margin-top: 30px;
+    align-self: flex-start;
+}
+// titres pages menu
+
+@mixin restaurant__name {
+    font-family: 'Shrikhand', cursive;
+ 
+}
+// titre menu-item
+
+@mixin title__section {
+    text-transform: uppercase;
+    font-size: 1rem;
+    animation: apparition 0.8s ease-out;
+// soulignement titre menu-item
+     &::after {
+        content: "";
+        background-color: $color-tiertiary;
+        height: 2px;
+        width: 40px;
+        display: block;
+        animation: apparition 1.3s ease-out 0.4s;
+
+    }
+}
+
+// cards plat
+
+@mixin menu-bg {
+    height: 50px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, .25);
+    padding: 10px;
+    animation: apparition 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    transform: scale(1);
+    transition: 0.2s;
+    &:hover{
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, .60);
+    transform: scale(1.01);
+
+    }
+    
+}
+// animation cards et soulignement chargement de page menus
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

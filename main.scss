@@ -1,0 +1,265 @@
+@import "./SASS/Base/reseat";
+@import "./SASS/Utils/mixins";
+@import "./SASS/Utils/variable.scss";
+
+.header {
+  &__logo {
+    // background-color: rgb(255, 255, 255);
+    background-color: rgb(61, 76, 78) !important;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.45);
+
+    i {
+      font-size: 1.5rem;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+// SECTION LOCATION
+.location {
+  background-color: #eaeaea;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  margin-top: 3px;
+  justify-content: center;
+
+  i {
+    margin-right: 20px;
+    font-size: large;
+  }
+
+  p {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
+
+// titres du site
+.title {
+  background-color: $grey;
+  padding: 40px 30px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &__big {
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+
+  .title__btn {
+    @include btn;
+  }
+}
+
+// FONTION DU SITE
+.function {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    @include title-section;
+  }
+
+  &__content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+
+    li {
+      @include bg-function;
+      font-weight: 600;
+      position: relative;
+
+      .circle {
+        height: 20px;
+        width: 20px;
+        background-color: $color-primary;
+        color: #fff;
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        left: -5px;
+        text-align: center;
+      }
+
+      i {
+        padding-right: 30px;
+        font-size: large;
+        color: #7e7e7e;
+      }
+    }
+  }
+}
+
+// SECTION RESTAURANTS
+.restaurant {
+  background-color: $grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    @include title-section;
+
+    margin-bottom: 30px;
+  }
+}
+
+.restaurant__cards {
+  &__cards {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10rem;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+    transition: 0.5s ease-in-out;
+    transform: scale(1);
+
+    &__thumb {
+      width: 300px;
+      border: 0 solid transparent;
+      border-radius: 1rem 1rem 0 0;
+      box-shadow: none;
+      object-fit: cover;
+    }
+
+    &__footer {
+      padding: 15px 10px 0 10px;
+    }
+
+    &:hover {
+      box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.65);
+      transform: scale(1.05);
+    }
+  }
+}
+
+// image de couverture des pages menus
+.head__thumbs {
+  background: url(./img/restaurants/palette-du-gout-big.jpg) center / cover
+    no-repeat;
+  height: 300px;
+}
+
+.head__thumbs__note {
+  background: url(./img/restaurants/note-enchantee-big.jpg) center / cover
+    no-repeat;
+  height: 300px;
+}
+
+.head__thumbs__francaise {
+  background: url(./img/restaurants/a-la-francaise-big.jpg) center / cover
+    no-repeat;
+  height: 300px;
+}
+
+.head__thumbs__delice {
+  background: url(./img/restaurants/delice-des-sens-big.jpg) center / cover
+    no-repeat;
+  height: 300px;
+}
+
+// body des pages menus
+.menu-container {
+  background-color: $grey;
+  margin-top: -57px;
+  border-radius: 40px 40px 0 0;
+  padding-top: 30px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  // nom du restaurant
+  &__name {
+    @include restaurant__name;
+  }
+
+  &__item {
+    &__section {
+      padding-top: 20px;
+      @include title__section;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__bg {
+        @include menu-bg;
+
+        p:nth-child(1) {
+          font-weight: bold;
+        }
+
+        p:nth-child(2) {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  margin-bottom: 80px;
+  margin-top: 50px;
+  @include btn;
+  padding: 15px;
+  text-align: center;
+}
+
+.footer {
+  background-color: $dark;
+  height: 200px;
+  padding: 20px;
+
+  &__body {
+    margin-left: 20px;
+    color: #fff;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    i {
+      margin-right: 10px;
+    }
+
+    a {
+      color: rgb(194, 194, 194);
+      transition: 0.2s;
+
+      &:hover {
+        color: rgb(250, 250, 250);
+      }
+    }
+  }
+}
